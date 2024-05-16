@@ -1,0 +1,51 @@
+let libro1={
+    titulo: "El resplandor",
+    autor: "Stephen King",
+    genero: "Terror",
+    idioma: "Español",
+    precio: 45000,
+    formato: "Tapa dura",
+    isbn: "978-8497594740",
+    descripcion: "Un hombre acepta un trabajo como cuidador de un hotel en invierno, pero el aislamiento y la presencia sobrenatural del lugar comienzan a afectar su cordura.",
+    estado: "Nuevo",
+    ubicacion: "Sección de Terror",
+    fecha_publicacion: "1977",
+    editorial: "Debolsillo",
+    paginas: 512,
+    dimensiones: "14 x 21 cm",
+    peso: "700 g"
+}
+let libro2={
+    titulo: "It",
+    autor: "Stephen King",
+    genero: "Terror",
+    idioma: "Español",
+    precio: 55000,
+    formato: "Tapa blanda",
+    isbn: "978-0451169518",
+    descripcion: "Un grupo de amigos se enfrenta a un ser maligno que toma la forma de sus peores miedos, resurgiendo cada 27 años en el pequeño pueblo de Derry.",
+    estado: "Usado - Buen estado",
+    ubicacion: "Sección de Terror",
+    fecha_publicacion: "1986",
+    editorial: "Penguin Random House",
+    paginas: 1376,
+    dimensiones: "13.5 x 20 cm",
+    peso: "900 g"
+}
+let libro3={
+    titulo: "El psicoanalista",
+    autor: "John Katzenbach",
+    genero: "Suspenso",
+    idioma: "Español",
+    precio: 48000,
+    formato: "Ebook",
+    isbn: "978-0307275422",
+    descripcion: "Un psicoanalista recibe una carta anónima que lo reta a jugar un peligroso juego psicológico, llevándolo al borde de la locura mientras intenta descubrir al remitente.",
+    estado: "Nuevo",
+    ubicacion: "Sección de Suspenso",
+    fecha_publicacion: "2002",
+    editorial: "Ballantine Books",
+    paginas: 560,
+    dimensiones: "Variable",
+    peso: "300 g"
+}

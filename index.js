@@ -340,25 +340,55 @@ let libros=[
         peso: "300 g"
       }
 ]
-libros.push({
-    titulo: "El último deseo",
-    autor: "Andrzej Sapkowski",
-    genero: "Fantasía oscura",
-    idioma: "Español",
-    precio: 46000,
-    formato: "Tapa blanda",
-    isbn: "978-8498891637",
-    descripcion: "El brujo Geralt de Rivia se ve envuelto en una serie de intrigas políticas y batallas contra monstruos mientras busca su destino.",
-    estado: "Nuevo",
-    ubicacion: "Sección de Fantasía",
-    fecha_publicacion: "1993",
-    editorial: "Alamut",
-    paginas: 256,
-    dimensiones: "14 x 21 cm",
-    peso: "350 g"
-})
-console.log(libros.length)
-console.log(libros[4])
-libros.pop(5)
-console.log(libros.length)
-console.log(libros)
+
+function agregar(libros) {
+  titulo=prompt("Ingrese un titulo")
+  autor=prompt("Ingrese un autor")
+  genero=prompt("Ingrese un genero")
+  idioma=prompt("Ingrese un idioma")
+  precio=prompt("Ingrese un precio")
+  formato=prompt("Ingrese un formato")
+  isbn=prompt("Ingrese un isbn")
+  descripcion=prompt("Ingrese una descripcion")
+  estado=prompt("Ingrese un estado")
+  ubicacion=prompt("Ingrese una ubicacion")
+  fecha_publicacion=prompt("Ingrese una fecha de publicacion")
+  editorial=prompt("Ingrese una editorial")
+  paginas=prompt("Ingrese las paginas")
+  dimensiones=prompt("Ingrese las dimensiones")
+  peso=prompt("Ingrese el peso")
+  libros.push({titulo,autor,genero,idioma,precio,formato,isbn,descripcion,estado,ubicacion,fecha_publicacion,editorial,paginas,dimensiones,peso})
+  console.log(libros)
+}
+
+function mostrar(libros) {
+  console.log(libros)
+}
+function eliminar(libros) {
+  libros.pop()
+  console.log(libros)
+}
+
+let opcion=0
+
+function inicio() {
+  libro=libros
+  do {
+    opcion=parseInt(prompt("Elija una opcion \n 1. Motrar libros \n 2. Eliminar libro \n 3.Agregar Libro"))
+    switch (opcion) {
+      case 1:
+        mostrar(libro)
+        break;
+      case 2:
+        eliminar(libro)
+        break; 
+      case 3:
+        agregar(libro)
+        break; 
+      default:"Ingrese un dato valido"
+        break;
+    }
+  } while (opcion = 0);
+  
+}
+inicio()

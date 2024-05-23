@@ -28,7 +28,7 @@ let libros=[
         estado: "Usado - Buen estado",
         ubicacion: "Sección de Terror",
         fecha_publicacion: "1986",
-        editorial: "Penguin Random House",
+        editorial: "Debolsillo",
         paginas: 1376,
         dimensiones: "13.5 x 20 cm",
         peso: "900 g"
@@ -45,7 +45,7 @@ let libros=[
         estado: "Nuevo",
         ubicacion: "Sección de Suspenso",
         fecha_publicacion: "2002",
-        editorial: "Ballantine Books",
+        editorial: "Debolsillo",
         paginas: 560,
         dimensiones: "Variable",
         peso: "300 g"
@@ -62,7 +62,7 @@ let libros=[
         estado: "Nuevo",
         ubicacion: "Sección de Desarrollo Personal",
         fecha_publicacion: "1998",
-        editorial: "HarperCollins",
+        editorial: "Debolsillo",
         paginas: 240,
         dimensiones: "13.5 x 20.5 cm",
         peso: "250 g"
@@ -79,7 +79,7 @@ let libros=[
         estado: "Usado - Buen estado",
         ubicacion: "Sección de Ficción Latinoamericana",
         fecha_publicacion: "1982",
-        editorial: "Plaza & Janés",
+        editorial: "Debolsillo",
         paginas: 520,
         dimensiones: "11 x 17.5 cm",
         peso: "400 g"
@@ -96,7 +96,7 @@ let libros=[
         estado: "Nuevo",
         ubicacion: "Sección de Suspenso",
         fecha_publicacion: "1948",
-        editorial: "Seix Barral",
+        editorial: "HarperCollins",
         paginas: 144,
         dimensiones: "13 x 20 cm",
         peso: "200 g"
@@ -130,7 +130,7 @@ let libros=[
         estado: "Nuevo",
         ubicacion: "Sección de Terror",
         fecha_publicacion: "1971",
-        editorial: "Debolsillo",
+        editorial: "HarperCollins",
         paginas: 400,
         dimensiones: "14 x 21 cm",
         peso: "600 g"
@@ -147,7 +147,7 @@ let libros=[
         estado: "Nuevo",
         ubicacion: "Sección de Suspenso",
         fecha_publicacion: "2018",
-        editorial: "Plaza & Janés",
+        editorial: "HarperCollins",
         paginas: 544,
         dimensiones: "Variable",
         peso: "400 g"
@@ -181,7 +181,7 @@ let libros=[
         estado: "Nuevo",
         ubicacion: "Sección de Terror",
         fecha_publicacion: "1988",
-        editorial: "Debolsillo",
+        editorial: "Urano",
         paginas: 384,
         dimensiones: "14 x 22 cm",
         peso: "600 g"
@@ -198,7 +198,7 @@ let libros=[
         estado: "Nuevo",
         ubicacion: "Sección de Suspenso",
         fecha_publicacion: "2001",
-        editorial: "Planeta",
+        editorial: "Urano",
         paginas: 552,
         dimensiones: "11 x 17.5 cm",
         peso: "450 g"
@@ -232,7 +232,7 @@ let libros=[
         estado: "Nuevo",
         ubicacion: "Sección de Terror",
         fecha_publicacion: "1890",
-        editorial: "Penguin Clásicos",
+        editorial: "Urano",
         paginas: 256,
         dimensiones: "14 x 21 cm",
         peso: "500 g"
@@ -249,7 +249,7 @@ let libros=[
         estado: "Nuevo",
         ubicacion: "Sección de Suspenso",
         fecha_publicacion: "2015",
-        editorial: "Salamandra",
+        editorial: "Urano",
         paginas: 480,
         dimensiones: "13.5 x 21 cm",
         peso: "400 g"
@@ -266,7 +266,7 @@ let libros=[
         estado: "Nuevo",
         ubicacion: "Sección de Desarrollo Personal",
         fecha_publicacion: "1997",
-        editorial: "Gaia Ediciones",
+        editorial: "Salamandra",
         paginas: 224,
         dimensiones: "13.5 x 21 cm",
         peso: "300 g"
@@ -283,7 +283,7 @@ let libros=[
         estado: "Nuevo",
         ubicacion: "Sección de Terror",
         fecha_publicacion: "1845",
-        editorial: "Ediciones Hiperión",
+        editorial: "Salamandra",
         paginas: 64,
         dimensiones: "12 x 18 cm",
         peso: "100 g"
@@ -317,7 +317,7 @@ let libros=[
         estado: "Nuevo",
         ubicacion: "Sección de Desarrollo Personal",
         fecha_publicacion: "1946",
-        editorial: "Debolsillo",
+        editorial: "Salamandra",
         paginas: 184,
         dimensiones: "13.5 x 20.5 cm",
         peso: "200 g"
@@ -334,7 +334,7 @@ let libros=[
         estado: "Nuevo",
         ubicacion: "Sección de Terror",
         fecha_publicacion: "1987",
-        editorial: "Penguin Random House",
+        editorial: "Salamandra",
         paginas: 352,
         dimensiones: "Variable",
         peso: "300 g"
@@ -368,6 +368,90 @@ function eliminar(libros) {
   libros.pop()
   console.log(libros)
 }
+let lista1 =libros.map(function titulo(libros){
+    return{
+      titulo:libros.titulo,
+      autor: libros.autor,
+      editorial: libros.editorial,
+      precio: libros.precio,
+    }
+})
+console.table(lista1)
+
+let lista2 =libros.map(function titulo(libros){
+  return{
+    titulo:libros.titulo,
+    genero: libros.genero,
+    idioma: libros.idioma,
+  }
+})
+console.table(lista2)
+let lista3 =libros.map(function titulo(libros){
+  return{
+    titulo:libros.titulo,
+    formato: libros.formato,
+    estado: libros.estado,
+  }
+})
+console.table(lista3)
+let lista4 =libros.map(function titulo(libros){
+  return{
+    titulo:libros.titulo,
+    isbn: libros.isbn,
+    ubicacion: libros.ubicacion,
+  }
+})
+console.table(lista4)
+let lista5 =libros.map(function titulo(libros){
+  return{
+    titulo:libros.titulo,
+    estado: libros.estado,
+    fecha_publicacion: libros.fecha_publicacion,
+  }
+})
+console.table(lista5)
+let lista6 =libros.map(function titulo(libros){
+  return{
+    titulo:libros.titulo,
+    paginas: libros.paginas,
+    dimensiones: libros.dimensiones,
+  }
+})
+console.table(lista6)
+let lista7 =libros.map(function titulo(libros){
+  return{
+    titulo:libros.titulo,
+    descripcion: libros.descripcion,
+    peso: libros.peso,
+  }
+})
+console.table(lista7)
+let lista8 =libros.map(function titulo(libros){
+  return{
+    titulo:libros.titulo,
+    formato: libros.formato,
+    precio: libros.precio,
+  }
+})
+console.table(lista8)
+let lista9 =libros.map(function titulo(libros){
+  return{
+    titulo:libros.titulo,
+    editorial: libros.editorial,
+    dimensiones: libros.dimensiones,
+  }
+})
+console.table(lista9)
+let lista10 =libros.map(function titulo(libros){
+  return{
+    titulo:libros.titulo,
+    idioma: libros.idioma,
+    precio: libros.precio,
+  }
+})
+console.table(lista10)
+
+
 
 let opcion=0
 
@@ -391,4 +475,7 @@ function inicio() {
   } while (opcion = 0);
   
 }
-inicio()
+do {
+  inicio()
+  continuar=prompt("Desea realizar otra accion")
+} while (continuar ==="si");

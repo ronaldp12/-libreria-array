@@ -459,6 +459,22 @@ let lista11 =libros.map(function titulo(libros){
     fecha_publicacion: libros.fecha_publicacion,
   }
 })
+let libros_desc= libros.map(function desc(libros){
+  return{
+    ...libros,
+    descuento: 20
+  }
+})
+
+let lista12= libros_desc.map( function libros_d(libros){
+  return{
+    titulo:libros.titulo,
+    autor: libros.autor,
+    editorial: libros.editorial,
+    precio: libros.precio,
+    descuento: libros.descuento,
+  }
+})
 
 
 function inicio() {
@@ -484,6 +500,7 @@ function inicio() {
         let msj2= "Elija una opcion\n\n"
         msj2+= "1. Motrar lista libro\n"
         msj2+= "2. Mostrar 10 iteraciones diferentes\n"
+        msj2+= "3. Mostrar Libros con descuento\n"
         msj2 =parseInt(prompt(msj2))
         switch (msj2) {
           case 1:
@@ -500,6 +517,9 @@ function inicio() {
             console.table(lista9)
             console.table(lista10)
             console.table(lista11)
+            break;
+          case 3:
+            console.table(lista12)
             break;
           default:"Ingrese un dato valido"
             break;

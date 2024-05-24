@@ -492,7 +492,8 @@ let libros_mas_grandes=libro_grandes.map((libro =>{
   }
 }))
 
-
+let libros_con_mayor_paginas= libros.sort((book1,book2) => 
+  book2.paginas -book1.paginas)
 
 function inicio() {
   let libro=libros
@@ -547,23 +548,27 @@ function inicio() {
         let msj3= "Elija una opcion\n\n"
         msj3+= "1. Libros con precio mayor a 50.000\n"
         msj3+= "2. Libros con mayor numero de paginas\n"
+        msj3+= "3. Libros ordenados por paginas\n"
         msj3 =parseInt(prompt(msj3))
         switch (msj3) {
           case 1:
             console.log(libros_caros)
             break;
           case 2:
-            console.log(console.table(libros_mas_grandes))
+            console.table(libros_mas_grandes)
+            break;
+          case 3:
+            console.log(libros_con_mayor_paginas)
             break;
           default:"Ingrese un dato valido"
             break;
         }
-        
       default:"Ingrese un dato valido"
         break;
     }
   } while (msj = 0);
   
+
 }
 do {
   inicio()

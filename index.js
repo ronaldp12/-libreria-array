@@ -476,6 +476,23 @@ let lista12= libros_desc.map( function libros_d(libros){
   }
 })
 
+let libros_caros= libros.filter((libro =>{
+  return libro.precio >50000
+}))
+
+let libro_grandes=libros.filter((libro =>{
+  return libro.paginas >600
+}))
+let libros_mas_grandes=libro_grandes.map((libro =>{
+  return{
+    titulo: libro.titulo,
+    autor: libro.autor,
+    editorial: libro.editorial,
+    paginas: libro.paginas
+  }
+}))
+
+
 
 function inicio() {
   let libro=libros
@@ -485,6 +502,7 @@ function inicio() {
         msj+= "2. Eliminar libro\n"
         msj+= "3. Agregar Libro\n"
         msj+= "4. Listar libros\n"
+        msj+= "5. Resumen de segmento\n"
         msj =parseInt(prompt(msj))
     switch (msj) {
       case 1:
@@ -525,6 +543,22 @@ function inicio() {
             break;
         }
         break;
+      case 5:
+        let msj3= "Elija una opcion\n\n"
+        msj3+= "1. Libros con precio mayor a 50.000\n"
+        msj3+= "2. Libros con mayor numero de paginas\n"
+        msj3 =parseInt(prompt(msj3))
+        switch (msj3) {
+          case 1:
+            console.log(libros_caros)
+            break;
+          case 2:
+            console.log(console.table(libros_mas_grandes))
+            break;
+          default:"Ingrese un dato valido"
+            break;
+        }
+        
       default:"Ingrese un dato valido"
         break;
     }

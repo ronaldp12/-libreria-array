@@ -368,6 +368,7 @@ function eliminar(libros) {
   libros.pop()
   console.log(libros)
 }
+ 
 let lista1 =libros.map(function titulo(libros){
     return{
       titulo:libros.titulo,
@@ -376,7 +377,6 @@ let lista1 =libros.map(function titulo(libros){
       precio: libros.precio,
     }
 })
-console.table(lista1)
 
 let lista2 =libros.map(function titulo(libros){
   return{
@@ -385,7 +385,8 @@ let lista2 =libros.map(function titulo(libros){
     idioma: libros.idioma,
   }
 })
-console.table(lista2)
+
+
 let lista3 =libros.map(function titulo(libros){
   return{
     titulo:libros.titulo,
@@ -393,7 +394,8 @@ let lista3 =libros.map(function titulo(libros){
     estado: libros.estado,
   }
 })
-console.table(lista3)
+
+
 let lista4 =libros.map(function titulo(libros){
   return{
     titulo:libros.titulo,
@@ -401,7 +403,7 @@ let lista4 =libros.map(function titulo(libros){
     ubicacion: libros.ubicacion,
   }
 })
-console.table(lista4)
+
 let lista5 =libros.map(function titulo(libros){
   return{
     titulo:libros.titulo,
@@ -409,7 +411,7 @@ let lista5 =libros.map(function titulo(libros){
     fecha_publicacion: libros.fecha_publicacion,
   }
 })
-console.table(lista5)
+
 let lista6 =libros.map(function titulo(libros){
   return{
     titulo:libros.titulo,
@@ -417,7 +419,7 @@ let lista6 =libros.map(function titulo(libros){
     dimensiones: libros.dimensiones,
   }
 })
-console.table(lista6)
+
 let lista7 =libros.map(function titulo(libros){
   return{
     titulo:libros.titulo,
@@ -425,7 +427,7 @@ let lista7 =libros.map(function titulo(libros){
     peso: libros.peso,
   }
 })
-console.table(lista7)
+
 let lista8 =libros.map(function titulo(libros){
   return{
     titulo:libros.titulo,
@@ -433,7 +435,7 @@ let lista8 =libros.map(function titulo(libros){
     precio: libros.precio,
   }
 })
-console.table(lista8)
+
 let lista9 =libros.map(function titulo(libros){
   return{
     titulo:libros.titulo,
@@ -441,7 +443,7 @@ let lista9 =libros.map(function titulo(libros){
     dimensiones: libros.dimensiones,
   }
 })
-console.table(lista9)
+
 let lista10 =libros.map(function titulo(libros){
   return{
     titulo:libros.titulo,
@@ -449,17 +451,26 @@ let lista10 =libros.map(function titulo(libros){
     precio: libros.precio,
   }
 })
-console.table(lista10)
 
+let lista11 =libros.map(function titulo(libros){
+  return{
+    titulo:libros.titulo,
+    precio: libros.precio,
+    fecha_publicacion: libros.fecha_publicacion,
+  }
+})
 
-
-let opcion=0
 
 function inicio() {
-  libro=libros
+  let libro=libros
   do {
-    opcion=parseInt(prompt("Elija una opcion \n 1. Motrar libros \n 2. Eliminar libro \n 3.Agregar Libro"))
-    switch (opcion) {
+    let msj= "Elija una opcion\n\n"
+        msj+= "1. Motrar libros\n"
+        msj+= "2. Eliminar libro\n"
+        msj+= "3. Agregar Libro\n"
+        msj+= "4. Listar libros\n"
+        msj =parseInt(prompt(msj))
+    switch (msj) {
       case 1:
         mostrar(libro)
         break;
@@ -469,13 +480,39 @@ function inicio() {
       case 3:
         agregar(libro)
         break; 
+      case 4:
+        let msj2= "Elija una opcion\n\n"
+        msj2+= "1. Motrar lista libro\n"
+        msj2+= "2. Mostrar 10 iteraciones diferentes\n"
+        msj2 =parseInt(prompt(msj2))
+        switch (msj2) {
+          case 1:
+            console.table(lista1)
+            break;
+          case 2:
+            console.table(lista2)
+            console.table(lista3)
+            console.table(lista4)
+            console.table(lista5)
+            console.table(lista6)
+            console.table(lista7)
+            console.table(lista8)
+            console.table(lista9)
+            console.table(lista10)
+            console.table(lista11)
+            break;
+          default:"Ingrese un dato valido"
+            break;
+        }
+        break;
       default:"Ingrese un dato valido"
         break;
     }
-  } while (opcion = 0);
+  } while (msj = 0);
   
 }
 do {
   inicio()
   continuar=prompt("Desea realizar otra accion")
 } while (continuar ==="si");
+

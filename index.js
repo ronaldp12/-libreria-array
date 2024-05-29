@@ -21,7 +21,7 @@ let libros=[
         autor: "Stephen King",
         genero: "Terror",
         idioma: "Español",
-        precio: 55000,
+        precio: 90000,
         formato: "Tapa blanda",
         isbn: "978-0451169518",
         descripcion: "Un grupo de amigos se enfrenta a un ser maligno que toma la forma de sus peores miedos, resurgiendo cada 27 años en el pequeño pueblo de Derry.",
@@ -38,7 +38,7 @@ let libros=[
         autor: "John Katzenbach",
         genero: "Suspenso",
         idioma: "Español",
-        precio: 48000,
+        precio: 86000,
         formato: "Ebook",
         isbn: "978-0307275422",
         descripcion: "Un psicoanalista recibe una carta anónima que lo reta a jugar un peligroso juego psicológico, llevándolo al borde de la locura mientras intenta descubrir al remitente.",
@@ -89,7 +89,7 @@ let libros=[
         autor: "Ernesto Sabato",
         genero: "Suspenso",
         idioma: "Español",
-        precio: 42000,
+        precio: 82000,
         formato: "Tapa blanda",
         isbn: "978-8432211671",
         descripcion: "Un hombre se obsesiona con una mujer y comete un crimen, desencadenando una espiral de paranoia y culpa.",
@@ -476,24 +476,71 @@ let lista12= libros_desc.map( function libros_d(libros){
   }
 })
 
-let libros_caros= libros.filter((libro =>{
-  return libro.precio >50000
-}))
+let libros_caros= libros.filter((libro) =>{
+  return libro.precio >80000
+})
 
-let libro_grandes=libros.filter((libro =>{
+let libro_grandes=libros.filter((libro) =>{
   return libro.paginas >600
-}))
-let libros_mas_grandes=libro_grandes.map((libro =>{
+})
+let libros_mas_grandes=libro_grandes.map((libro) =>{
   return{
     titulo: libro.titulo,
     autor: libro.autor,
     editorial: libro.editorial,
     paginas: libro.paginas
   }
-}))
+})
 
 let libros_con_mayor_paginas= libros.sort((book1,book2) => 
   book2.paginas -book1.paginas)
+
+let libros_caros_titulo=libros.filter((libro) => {
+  return libro.precio >43000
+})
+.map((titulo) =>{
+  return{
+    titulo:titulo.titulo,
+    autor:titulo.autor,
+    precio:titulo.precio,
+  }
+})
+
+let libros_pequeños=libros.filter((libro) => {
+  return libro.paginas <100
+})
+.map((titulo) =>{
+  return{
+    titulo:titulo.titulo,
+    autor:titulo.autor,
+    editorial:titulo.editorial,
+    paginas:titulo.paginas
+  }
+})
+
+let libros_caros_=libros.filter((libro) => {
+  return libro.precio >60000
+})
+.sort((book1,book2) => 
+  book2.precio -book1.precio)
+.map((titulo) =>{
+  return{
+    titulo:titulo.titulo,
+    autor:titulo.autor,
+    precio:titulo.precio,
+  }
+})
+
+let libros_alto_paginas= libros.sort((book1,book2) => 
+  book2.paginas -book1.paginas)
+.map((titulo) =>{
+  return{
+    titulo:titulo.titulo,
+    autor:titulo.autor,
+    editorial:titulo.editorial,
+    paginas:titulo.paginas,
+  }
+})
 
 function inicio() {
   let libro=libros
@@ -546,9 +593,13 @@ function inicio() {
         break;
       case 5:
         let msj3= "Elija una opcion\n\n"
-        msj3+= "1. Libros con precio mayor a 50.000\n"
+        msj3+= "1. Libros con precio mayor a 51.000\n"
         msj3+= "2. Libros con mayor numero de paginas\n"
         msj3+= "3. Libros ordenados por paginas\n"
+        msj3+= "4. Libros mayor a 46.000\n"
+        msj3+= "5. Libros menores de 100 paginas\n"
+        msj3+= "6. Libros caros mayor a menor\n"
+        msj3+= "7. Libros con numero mas alto de paginas\n"
         msj3 =parseInt(prompt(msj3))
         switch (msj3) {
           case 1:
@@ -559,6 +610,18 @@ function inicio() {
             break;
           case 3:
             console.log(libros_con_mayor_paginas)
+            break;
+          case 4:
+            console.table(libros_caros_titulo)
+            break;
+          case 5:
+            console.table(libros_pequeños)
+            break;
+          case 6:
+            console.log(libros_caros_)
+            break;
+          case 7:
+            console.table(libros_alto_paginas)
             break;
           default:"Ingrese un dato valido"
             break;

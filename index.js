@@ -567,6 +567,7 @@ function inicio() {
         msj2+= "1. Motrar lista libro\n"
         msj2+= "2. Mostrar 10 iteraciones diferentes\n"
         msj2+= "3. Mostrar Libros con descuento\n"
+        msj2+= "4. Mostrar Libros con descuento listados\n"
         msj2 =parseInt(prompt(msj2))
         switch (msj2) {
           case 1:
@@ -585,6 +586,9 @@ function inicio() {
             console.table(lista11)
             break;
           case 3:
+            console.log(libros_desc)
+            break;
+          case 4:
             console.table(lista12)
             break;
           default:"Ingrese un dato valido"

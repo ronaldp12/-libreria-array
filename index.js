@@ -346,7 +346,7 @@ function agregar(libros) {
   autor=prompt("Ingrese un autor")
   genero=prompt("Ingrese un genero")
   idioma=prompt("Ingrese un idioma")
-  precio=prompt("Ingrese un precio")
+  precio=parseInt(prompt("Ingrese un precio"))
   formato=prompt("Ingrese un formato")
   isbn=prompt("Ingrese un isbn")
   descripcion=prompt("Ingrese una descripcion")
@@ -354,7 +354,7 @@ function agregar(libros) {
   ubicacion=prompt("Ingrese una ubicacion")
   fecha_publicacion=prompt("Ingrese una fecha de publicacion")
   editorial=prompt("Ingrese una editorial")
-  paginas=prompt("Ingrese las paginas")
+  paginas=parseInt(prompt("Ingrese las paginas"))
   dimensiones=prompt("Ingrese las dimensiones")
   peso=prompt("Ingrese el peso")
   libros.push({titulo,autor,genero,idioma,precio,formato,isbn,descripcion,estado,ubicacion,fecha_publicacion,editorial,paginas,dimensiones,peso})
@@ -496,7 +496,7 @@ let libros_con_mayor_paginas= libros.sort((book1,book2) =>
   book2.paginas -book1.paginas)
 
 let libros_caros_titulo=libros.filter((libro) => {
-  return libro.precio >43000
+  return libro.precio >46000
 })
 .map((titulo) =>{
   return{
@@ -593,7 +593,7 @@ function inicio() {
         break;
       case 5:
         let msj3= "Elija una opcion\n\n"
-        msj3+= "1. Libros con precio mayor a 51.000\n"
+        msj3+= "1. Libros con precio mayor a 80.000\n"
         msj3+= "2. Libros con mayor numero de paginas\n"
         msj3+= "3. Libros ordenados por paginas\n"
         msj3+= "4. Libros mayor a 46.000\n"

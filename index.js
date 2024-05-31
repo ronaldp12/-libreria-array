@@ -542,6 +542,66 @@ let libros_alto_paginas= libros.sort((book1,book2) =>
   }
 })
 
+let algunlibrotitulo = libros.find((libro) => {
+  return libro.titulo === "La mujer en la ventana";
+});
+
+let algunlibroautor = libros.find((libro) => {
+  return libro.autor === "Paulo Coelho";
+});
+
+let algunlibrofecha = libros.find((libro) => {
+  return libro.fecha_publicacion === "1997";
+});
+
+let algunlibrogenero = libros.find((libro) => {
+  return libro.genero === "Suspenso";
+});
+
+let algunlibroidioma = libros.find((libro) => {
+  return libro.idioma === "Español";
+});
+
+let busqueda1 = libros.find((libro) => {
+  return libro.precio === 90000;
+});
+
+let busqueda2 = libros.find((libro) => {
+  return libro.paginas === 384;
+});
+
+let busqueda3 = libros.find((libro) => {
+  return libro.dimensiones === "14 x 21 cm";
+});
+
+let busqueda4 = libros.find((libro) => {
+  return libro.descripcion === "Un abogado exitoso abandona su carrera y se embarca en un viaje espiritual en el Himalaya, aprendiendo lecciones sobre felicidad y realización personal.";
+});
+
+let busqueda5 = libros.find((libro) => {
+  return libro.estado === "Nuevo";
+});
+
+let busqueda6 = libros.find((libro) => {
+  return libro.peso === "300 g";
+});
+
+let busqueda7 = libros.find((libro) => {
+  return libro.editorial === "Salamandra";
+});
+
+let busqueda8 = libros.find((libro) => {
+  return libro.ubicacion === "Sección de Desarrollo Personal";
+});
+
+let busqueda9 = libros.find((libro) => {
+  return libro.isbn === "978-8408180630";
+});
+
+let busqueda10 = libros.find((libro) => {
+  return libro.formato === "Tapa blanda";
+});
+
 function inicio() {
   let libro=libros
   do {
@@ -551,6 +611,7 @@ function inicio() {
         msj+= "3. Agregar Libro\n"
         msj+= "4. Listar libros\n"
         msj+= "5. Resumen de segmento\n"
+        msj+= "6. Funciones de segmento\n"
         msj =parseInt(prompt(msj))
     switch (msj) {
       case 1:
@@ -630,6 +691,48 @@ function inicio() {
           default:"Ingrese un dato valido"
             break;
         }
+        case 6:
+          let msj4= "Elija una opcion\n\n"
+        msj4+= "1. Objeto por titulo\n"
+        msj4+= "2. Objeto por autor\n"
+        msj4+= "3. Objeto por fecha publicacion\n"
+        msj4+= "4. Objeto por genero\n"
+        msj4+= "5. Objeto por idioma\n"
+        msj4+= "6. Búsqueda de libros 10 iteraciones \n"
+        msj4 =parseInt(prompt(msj4))
+        switch (msj4) {
+          case 1:
+            console.table(algunlibrotitulo)
+            break;
+          case 2:
+            console.table(algunlibroautor)
+            break;
+          case 3:
+            console.table(algunlibrofecha)
+            break;
+          case 4:
+            console.table(algunlibrogenero)
+            break;
+          case 5:
+            console.table(algunlibroidioma)
+            break;
+          case 6:
+            console.table(busqueda1)
+            console.table(busqueda2)
+            console.table(busqueda3)
+            console.table(busqueda4)
+            console.table(busqueda5)
+            console.table(busqueda6)
+            console.table(busqueda7)
+            console.table(busqueda8)
+            console.table(busqueda9)
+            console.table(busqueda10)
+            break;
+        
+          default:"Ingrese un dato valido"
+            break;
+        }
+          break;
       default:"Ingrese un dato valido"
         break;
     }

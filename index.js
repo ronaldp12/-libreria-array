@@ -691,6 +691,7 @@ function inicio() {
           default:"Ingrese un dato valido"
             break;
         }
+        break;
         case 6:
           let msj4= "Elija una opcion\n\n"
         msj4+= "1. Objeto por titulo\n"
